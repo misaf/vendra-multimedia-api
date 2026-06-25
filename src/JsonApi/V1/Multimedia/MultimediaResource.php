@@ -11,8 +11,6 @@ final class MultimediaResource extends JsonApiResource
     public function attributes($request): iterable
     {
         return [
-            'model_type'            => $this->model_type,
-            'model_id'              => $this->model_id,
             'uuid'                  => $this->uuid,
             'collection_name'       => $this->collection_name,
             'name'                  => $this->name,
