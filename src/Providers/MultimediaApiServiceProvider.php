@@ -12,7 +12,8 @@ final class MultimediaApiServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
-        $package->name('vendra-multimedia-api');
+        $package->name('vendra-multimedia-api')
+            ->hasRoute('api');
     }
 
     public function packageBooted(): void
