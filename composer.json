@@ -48,7 +48,11 @@
 	"prefer-stable": true,
 	"autoload": {
 		"psr-4": {
-			"Misaf\\VendraMultimediaApi\\": "src/",
+			"Misaf\\VendraMultimediaApi\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
 			"Misaf\\VendraMultimediaApi\\Tests\\": "tests/"
 		}
 	},
