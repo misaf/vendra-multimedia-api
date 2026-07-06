@@ -5,9 +5,16 @@ declare(strict_types=1);
 namespace Misaf\VendraMultimediaApi\JsonApi\V1\Multimedia;
 
 use LaravelJsonApi\Core\Resources\JsonApiResource;
+use Misaf\VendraMultimedia\Models\Multimedia;
 
+/**
+ * @mixin Multimedia
+ */
 final class MultimediaResource extends JsonApiResource
 {
+    /**
+     * @return iterable<string, mixed>
+     */
     public function attributes($request): iterable
     {
         return [
