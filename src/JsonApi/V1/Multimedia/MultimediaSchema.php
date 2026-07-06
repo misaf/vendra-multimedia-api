@@ -4,6 +4,9 @@ declare(strict_types=1);
 
 namespace Misaf\VendraMultimediaApi\JsonApi\V1\Multimedia;
 
+use LaravelJsonApi\Contracts\Schema\Field;
+use LaravelJsonApi\Contracts\Schema\Filter;
+use LaravelJsonApi\Contracts\Schema\Sortable;
 use LaravelJsonApi\Eloquent\Fields\DateTime;
 use LaravelJsonApi\Eloquent\Fields\ID;
 use LaravelJsonApi\Eloquent\Fields\Number;
@@ -19,8 +22,14 @@ final class MultimediaSchema extends Schema
 {
     public static string $model = Multimedia::class;
 
+    /**
+     * @var array<string, int>|null
+     */
     protected ?array $defaultPagination = ['number' => 1];
 
+    /**
+     * @return array<int, Field>
+     */
     public function fields(): array
     {
         return [
@@ -64,6 +73,9 @@ final class MultimediaSchema extends Schema
         ];
     }
 
+    /**
+     * @return array<int, Filter>
+     */
     public function filters(): array
     {
         return [
@@ -71,6 +83,9 @@ final class MultimediaSchema extends Schema
         ];
     }
 
+    /**
+     * @return array<int, Filter>
+     */
     private function getPrimaryKeyFilters(): array
     {
         return [
@@ -84,6 +99,9 @@ final class MultimediaSchema extends Schema
         return PagePagination::make();
     }
 
+    /**
+     * @return iterable<int, Sortable>
+     */
     public function sortables(): iterable
     {
         return [
