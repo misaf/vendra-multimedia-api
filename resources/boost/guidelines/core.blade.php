@@ -4,7 +4,7 @@ The `misaf/vendra-multimedia-api` package exposes `misaf/vendra-multimedia` doma
 
 ### Standards
 
-- Keep API code inside `app-modules/vendra-multimedia-api` using the `Misaf\VendraMultimediaApi` namespace.
+- Keep API code inside `packages/vendra-multimedia-api` using the `Misaf\VendraMultimediaApi` namespace.
 - Use this package for JSON:API servers, schemas, resources, query validators, API routes, service providers, and API tests.
 - Import domain models from `Misaf\VendraMultimedia`; do not duplicate persistence or domain behavior in the API module.
 - Keep Filament/admin UI in `misaf/vendra-multimedia`.

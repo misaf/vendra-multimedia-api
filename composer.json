@@ -1,6 +1,5 @@
 {
     "name": "misaf/vendra-multimedia-api",
-    "version": "0.0.7",
     "description": "API services for the vendra-multimedia module",
     "keywords": [
         "laravel",
@@ -55,13 +54,13 @@
         }
     },
     "extra": {
+        "branch-alias": {
+            "dev-master": "0.0.x-dev"
+        },
         "laravel": {
             "providers": [
                 "Misaf\\VendraMultimediaApi\\Providers\\MultimediaApiServiceProvider"
             ]
-        },
-        "branch-alias": {
-            "dev-master": "13.x-dev"
         }
     },
     "scripts": {
