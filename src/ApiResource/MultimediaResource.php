@@ -9,7 +9,11 @@ use ApiPlatform\Metadata\ApiProperty;
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Metadata\Get;
 use ApiPlatform\Metadata\GetCollection;
+use ApiPlatform\Metadata\McpTool;
+use ApiPlatform\Metadata\McpToolCollection;
 use ApiPlatform\Metadata\QueryParameter;
+use Misaf\VendraApi\ApiResource\McpCollectionInput;
+use Misaf\VendraApi\ApiResource\McpResourceIdentifierInput;
 use Misaf\VendraMultimediaApi\State\AssetProvider;
 
 #[ApiResource(
@@ -24,16 +28,34 @@ use Misaf\VendraMultimediaApi\State\AssetProvider;
             ],
         ),
     ],
+    mcp: [
+        'get_multimedia' => new McpTool(
+            description: 'Get a public multimedia asset and its conversions by identifier.',
+            input: McpResourceIdentifierInput::class,
+            provider: AssetProvider::class,
+        ),
+        'list_multimedia' => new McpToolCollection(
+            description: 'List public multimedia assets and their conversions.',
+            input: McpCollectionInput::class,
+            provider: AssetProvider::class,
+        ),
+    ],
 )]
 final readonly class MultimediaResource
 {
+    /**
+     * @param array<string, mixed> $generatedConversions
+     */
     public function __construct(
         #[ApiProperty(identifier: true)]
         public int $id,
         public string $uuid,
         public string $name,
+        public string $fileName,
         public string $collection,
         public ?string $mimeType,
         public int $bytes,
+        public ?string $url,
+        public array $generatedConversions,
     ) {}
 }
